@@ -1,4 +1,4 @@
-import { View,Text,TextInput,StyleSheet} from 'react-native';
+import { View,Text,TextInput,StyleSheet, Button} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
 
 export default function SearchBar (){
@@ -6,6 +6,7 @@ export default function SearchBar (){
         <View style = {styles.container}>
             <FontAwesome name='search'size={18}color={'grey'}/>
             <TextInput style={styles.text} placeholder='restaurant,food'/>
+            
         </View>
     )
 }
@@ -29,7 +30,8 @@ const styles = StyleSheet.create({
         fontSize: 15,
         marginLeft: 6,
         
-    }
+    },
+    
    
 
 })

@@ -2,12 +2,13 @@ import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Appbar } from 'react-native-paper';
 
-import { StyleSheet, Text, View, Button,Linking, SafeAreaView,} from 'react-native';
+import { StyleSheet, Text, View, Button,Linking, SafeAreaView,Image} from 'react-native';
 
 import tw from 'tailwind-react-native-classnames';
 import Header from './src/components/header';
 import SearchBar from './src/components/searchBar';
 import AppBar from './src/components/appbar';
+import CategoryItem from './src/components/categoryItem'
 
 
 
@@ -16,12 +17,18 @@ export default function App() {
     
     <View style = {styles.body}>
       <AppBar/>
-      
-   
       <Header />
       <SearchBar />
+      <CategoryItem />
+
+      <Image style={styles.image} source={{uri:'https://reactnative.dev/img/tiny_logo.png'}} />
+      <Image style ={styles.bigImage} source={require("./src/assets/images/pizza.jpg")} />
+      <Image style ={styles.bigImage} source={require("./src/assets/images/burger.jpg")} />
+      <Button style={styles.button} borderRadius={50}color={'blue'} onPress={()=>{}} title='pro mood'/>
+
       
-      <Button title='youtube chaneel' onPress={()=>{Linking.openURL('https://www.youtube.com/results?search_query=dotted+container+flutter')}}></Button>
+      
+      {/* <Button title='youtube chaneel' onPress={()=>{Linking.openURL('https://www.youtube.com/results?search_query=dotted+container+flutter')}}></Button> */}
    <StatusBar />
    
    </View>
@@ -75,6 +82,20 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   button:{
-    color: '#ffffff'
-  }
+    color: '#ffffff',
+    height: 200
+  },
+  image:{
+    
+   width: 100,
+    height: 100,
+    justifyContent: "center"
+  },
+  bigImage:{
+    
+    width: 40,
+     height: 40,
+     justifyContent: "center"
+   }
 });
+
