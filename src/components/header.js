@@ -1,10 +1,11 @@
-import {View,StyleSheet,Text} from "react-native"
+import {View,StyleSheet,Text,SafeAreaView} from "react-native"
 
 export default function Header(){
     return(
         <View style ={styles.container}>
             <Text style={styles.largeText}>grab your</Text>
             <Text style = {styles.smallText}>delicacies</Text>
+            <SafeAreaView/>
         </View>
 
     )
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
     },
 
     container: {
+        marginBottom: 20,
         backgroundColor: "white",
         marginHorizontal: 15,
         

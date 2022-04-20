@@ -1,19 +1,29 @@
+import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { Appbar } from 'react-native-paper';
 
-import { StyleSheet, Text, View, Button,Linking, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, View, Button,Linking, SafeAreaView,} from 'react-native';
+
 import tw from 'tailwind-react-native-classnames';
 import Header from './src/components/header';
 import SearchBar from './src/components/searchBar';
+import AppBar from './src/components/appbar';
+
 
 
 export default function App() {
   return (
+    
     <View style = {styles.body}>
+      <AppBar/>
+      
+   
       <Header />
       <SearchBar />
       
       <Button title='youtube chaneel' onPress={()=>{Linking.openURL('https://www.youtube.com/results?search_query=dotted+container+flutter')}}></Button>
    <StatusBar />
+   
    </View>
   );
 }
@@ -27,12 +37,12 @@ export default function App() {
 // })
 
 const styles = StyleSheet.create({
-  body: {
+  item: {
     
     backgroundColor: 'white',
-    alignItems: 'flex-start',
     
-    flex: 1,
+    
+    
     
     
   },
