@@ -19,11 +19,14 @@ export default function App() {
       <AppBar/>
       <Header />
       <SearchBar />
-      <CategoryItem />
+      <CategoryItem 
+      name = 'Today'/>
+      <CategoryItem 
+      name = 'pizza'/>
 
       <Image style={styles.image} source={{uri:'https://reactnative.dev/img/tiny_logo.png'}} />
-      <Image style ={styles.bigImage} source={require("./src/assets/images/pizza.jpg")} />
-      <Image style ={styles.bigImage} source={require("./src/assets/images/burger.jpg")} />
+       <Image style ={styles.bigImage} source={require("./src/assets/images/pizza.jpg")} />
+      <Image style ={styles.bigImage} source={require("./src/assets/images/burger.jpg")} /> 
       <Button style={styles.button} borderRadius={50}color={'blue'} onPress={()=>{}} title='pro mood'/>
 
       
