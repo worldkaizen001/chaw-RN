@@ -1,18 +1,22 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 
-export default function CategoryItem({title,index}){
+export default function CategoryItem({title,index,active, handlePress}){
 
     return(
 
-        <View style ={[styles.container, index === 0 ? {marginLeft:25} : {marginLeft:22}]}>
+     <TouchableOpacity onPress={handlePress}>
+         <View style ={[styles.container, index === 0 ? {marginLeft:25} : {marginLeft:22}, active ? {backgroundColor: "teal"}:{backgroundColor: "white"}]}>
                   <View style = {styles.smallContainer}>
                   
                   <Image style={[styles.image,]} source={{uri:'https://reactnative.dev/img/tiny_logo.png'}} />
                   </View>
                    <Text>{title}</Text>
         </View>
+     </TouchableOpacity>
+
+     
     )
 }
 

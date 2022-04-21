@@ -1,4 +1,4 @@
-import * as React from 'react';
+import {useState} from "react"
 import { StatusBar } from 'expo-status-bar';
 import { Appbar } from 'react-native-paper';
 
@@ -13,6 +13,8 @@ import CategoryItem from './src/components/categoryItem'
 
 
 export default function App() {
+
+  const [term, setTerm]= useState("Burger")
 
   const commonCategories =[{
     name: "Burger"
@@ -47,7 +49,8 @@ export default function App() {
       showsHorizontalScrollIndicator={false}
       data={commonCategories}
       renderItem={({item,index})=>{
-        return <CategoryItem title={item.name} index={index} />
+        return <CategoryItem title={item.name} index={index} active={item.name === term} 
+        handlePress={()=> setTerm(item.name)}/>
         
       }}
       />
