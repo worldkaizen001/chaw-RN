@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Appbar } from 'react-native-paper';
 
-import { StyleSheet, Text, View, Button,Linking, SafeAreaView,Image} from 'react-native';
+import { StyleSheet, Text, View, Button,Linking, SafeAreaView,Image,FlatList} from 'react-native';
 
 import tw from 'tailwind-react-native-classnames';
 import Header from './src/components/header';
@@ -13,16 +13,42 @@ import CategoryItem from './src/components/categoryItem'
 
 
 export default function App() {
+
+  const commonCategories =[{
+    name: "Burger"
+  },
+  {
+    name: "Pizza"
+  },
+  {
+    name: "Dessert"
+  },
+  {
+    name: "Burger"
+  },
+  {
+    name: "Burger"
+  },
+  {
+    name: "Burger"
+  }]
   return (
     
     <View style = {styles.body}>
       <AppBar/>
       <Header />
       <SearchBar />
-      <CategoryItem 
-      name = 'Today'/>
-      <CategoryItem 
-      name = 'pizza'/>
+      
+      
+      <FlatList 
+      horizontal
+      data={commonCategories}
+      renderItem={({item})=>{
+        return <CategoryItem title={item.name} />
+      }}
+      />
+
+
 
       <Image style={styles.image} source={{uri:'https://reactnative.dev/img/tiny_logo.png'}} />
        <Image style ={styles.bigImage} source={require("./src/assets/images/pizza.jpg")} />

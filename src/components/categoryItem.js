@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Text, View, Image } from "react-native";
 
 
-export default function CategoryItem({name}){
+export default function CategoryItem({title}){
 
     return(
         <View style ={styles.container}>
@@ -10,19 +10,19 @@ export default function CategoryItem({name}){
                   
                   <Image style={styles.image} source={{uri:'https://reactnative.dev/img/tiny_logo.png'}} />
                   </View>
-                   <Text>{name}</Text>
+                   <Text>{title}</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container:{
-        flexDirection:"row",
+        
         height: 90,
         width: 60,
         backgroundColor: 'teal',
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "center", 
         borderRadius: 15,
         marginHorizontal: 25,
         marginVertical: 10,
