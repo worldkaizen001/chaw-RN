@@ -24,14 +24,15 @@ export default function App() {
     name: "Dessert"
   },
   {
-    name: "Burger"
+    name: "Creams"
   },
   {
-    name: "Burger"
+    name: "Salads"
   },
   {
-    name: "Burger"
-  }]
+    name: "fries"
+  },
+  ]
   return (
     
     <View style = {styles.body}>
@@ -41,10 +42,13 @@ export default function App() {
       
       
       <FlatList 
+      keyExtractor={(category)=>category.name}
       horizontal
+      showsHorizontalScrollIndicator={false}
       data={commonCategories}
-      renderItem={({item})=>{
-        return <CategoryItem title={item.name} />
+      renderItem={({item,index})=>{
+        return <CategoryItem title={item.name} index={index} />
+        
       }}
       />
 

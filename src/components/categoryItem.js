@@ -2,13 +2,14 @@ import * as React from 'react';
 import { StyleSheet, Text, View, Image } from "react-native";
 
 
-export default function CategoryItem({title}){
+export default function CategoryItem({title,index}){
 
     return(
-        <View style ={styles.container}>
+
+        <View style ={[styles.container, index === 0 ? {marginLeft:25} : {marginLeft:22}]}>
                   <View style = {styles.smallContainer}>
                   
-                  <Image style={styles.image} source={{uri:'https://reactnative.dev/img/tiny_logo.png'}} />
+                  <Image style={[styles.image,]} source={{uri:'https://reactnative.dev/img/tiny_logo.png'}} />
                   </View>
                    <Text>{title}</Text>
         </View>
@@ -18,14 +19,16 @@ export default function CategoryItem({title}){
 const styles = StyleSheet.create({
     container:{
         
-        height: 90,
+        
+        height: 85,
         width: 60,
-        backgroundColor: 'teal',
+        backgroundColor: 'white',
         justifyContent: "center",
         alignItems: "center", 
         borderRadius: 15,
-        marginHorizontal: 25,
-        marginVertical: 10,
+        marginVertical: 20,
+        elevation:5,
+        
         
     },
     itemText:{},
